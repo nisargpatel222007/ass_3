@@ -1,0 +1,40 @@
+
+
+//  Copyonearray of 5 elements to another array of 10 elements (skipping one position)
+
+
+#include <stdio.h>
+int main()
+{
+    int arr1[5] = {10, 20, 30, 40, 50};  // original array
+    int arr2[10];                        // new array of size 10
+
+    // Initialize arr2 with 0 (optional)
+    for (int i = 0; i < 10; i++)
+    {
+        arr2[i] = 0;
+    }
+int j=0;
+for (int i = 0; i < 10; i++)
+{
+    if (i % 2 == 0)   // only even positions
+    {
+        arr2[i] = arr1[j];
+        j++;
+    }
+    else
+    {
+        arr2[i] = 0;  // or -1, to mark skipped position
+    }
+}
+
+
+    // Print new array
+    printf("New array (arr2):\n");
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d ", arr2[i]);
+    }
+
+    return 0;
+}
