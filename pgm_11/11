@@ -1,0 +1,62 @@
+
+
+//     Shift all numbers by n positions within an array of 10 elements (left or right), pad
+ with 0
+
+ #include <stdio.h>
+
+void main() 
+{
+    int arr[100]; 
+    int i; 
+    int n;          
+    int direction;  
+
+    printf("Enter 10 integer elements:\n");
+    for (i = 0; i < 10; i++) 
+    {
+        scanf("%d", &arr[i]); 
+    }
+    for (i = 0; i < 10; i++) 
+    {
+        printf("%d\t",arr[i]);
+    }
+    printf("\nEnter shift magnitude (n): ");
+    scanf("%d", &n);
+
+    printf("Enter direction (0 for Left Shift, 1 for Right Shift): ");
+    scanf("%d", &direction);
+    
+    
+    if (direction == 1) 
+    {
+        for (i = 10 - 1; i >= n; i--)
+        {
+            arr[i] = arr[i - n];
+        }
+        for (i = 0; i < n; i++) 
+        {
+            arr[i] = 0;
+        }
+        
+        printf("\nRight shift performed.\n");
+    } 
+    else
+    {
+        for (i = 0; i < 10 - n; i++) 
+        {
+           arr[i] = arr[i + n];
+        }
+        for (i = 10 - n; i <10; i++) 
+        {
+            arr[i] = 0;
+        }
+        printf("\nLeft shift performed.\n");
+    }
+    printf("Resulting array (shifted by %d):\n", n);
+    for (i = 0; i < 10; i++) 
+    {
+        printf("%d ", arr[i]); 
+    }
+    printf("\n"); 
+}
