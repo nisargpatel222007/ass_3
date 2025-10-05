@@ -1,0 +1,18 @@
+//  Accept 10 values and print 4th, 7th, and 9th value.
+#include <stdio.h>
+ int main() 
+ {
+ int arr[10], i;
+ printf("Enter 5 values:\n ");
+ for(i = 0; i <10; i++) 
+ {
+ scanf("%d", &arr[i]);
+ }
+ printf("The values are:\n");
+ for(i = 0; i < 1; i++) 
+ {
+ printf("%d ", arr[3]);
+ printf("%d ", arr[6]);
+ printf("%d ", arr[8]);
+ }
+ }
