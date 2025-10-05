@@ -1,0 +1,40 @@
+// palindrome string check 
+
+
+#include <stdio.h>
+int main() 
+{
+    char str[100], reversed[100];
+    int length = 0, i;
+
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Manually calculate length (excluding newline)
+    while (str[length] != '\0' && str[length] != '\n') 
+    {
+        length++;
+    }
+
+    // Reverse the string manually
+    for (i = 0; i < length; i++) 
+    {
+        reversed[i] = str[length - 1 - i];
+    }
+   
+
+    printf("Reversed string: %s\n", reversed);
+
+    // Direct comparison
+    for (i = 0; i < length; i++)
+    {
+        if (str[i] != reversed[i]) 
+        {
+            printf("The string is not a palindrome.\n");
+            return 0;
+        }
+    }
+
+    printf("The string is a palindrome.\n");
+    return 0;
+}
