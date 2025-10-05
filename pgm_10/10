@@ -1,0 +1,32 @@
+
+
+//     Find frequency of each number in an array (10 elements).
+
+
+#include <stdio.h>
+
+int main() 
+{
+
+    int arr[10];
+    int i, j, count;
+    printf("Enter elements for the array:\n");
+    for (i = 0; i < 10; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("\nThe frequency of each element is:\n");
+    for (i = 0; i < 10; i++)
+    {
+        count = 0;
+        for (j = 0; j < 10; j++) 
+        {
+            if (arr[i] == arr[j]) 
+            {
+                count++;
+            }
+        }
+        printf("Element %d occurs %d time(s)\n", arr[i], count);
+    }
+}
