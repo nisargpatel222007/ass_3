@@ -1,0 +1,63 @@
+//   Obtain transpose of a 4 ×4 matrix.
+
+
+#include <stdio.h>
+
+int main() 
+{
+    int n;
+
+    // Input the size of the matrix
+    printf("Enter the size of the matrix (n): ");
+    scanf("%d", &n);
+
+    // Declare two n*n matrices. This is a Variable Length Array (VLA).
+    int a[n][n];
+    int b[n][n];
+
+    printf("Enter the %d array elements:\n", n * n);
+
+    // Loop to read elements into the first matrix (a)
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Display the original matrix directly
+    printf("\nOriginal Matrix:\n");
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    // --- Transpose the matrix ---
+    // The core logic is identical to the Java version
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            // Swap row and column indices
+            b[i][j] = a[j][i];
+        }
+    }
+
+    // Display the transposed matrix directly
+    printf("\nTransposed Matrix:\n");
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            printf("%d\t", b[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
