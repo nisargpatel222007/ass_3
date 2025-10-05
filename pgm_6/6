@@ -1,0 +1,71 @@
+
+
+//   Multiply two 2D arrays and store the result in the 3rd one.
+
+// asking n from the user ie deffining array size by the user 
+
+
+#include <stdio.h>
+int main() 
+{
+    int n;
+    printf("Enter the size of the matrix (n)");
+    scanf("%d", &n);
+    int a[n][n];
+    int b[n][n];
+    int c[n][n];
+    printf("Enter the  array elements:\n");
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            printf("Enter element a[%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    // --- Print the first matrix (a) ---
+    printf("\nMatrix 'a' you entered:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            printf("Enter element b[%d][%d]: ", i, j);
+            scanf("%d", &b[i][j]);
+        }
+    }
+    
+    
+    
+    // --- Print the first matrix (a) ---
+    printf("\nMatrix 'b' you entered:\n");
+    for (int i = 0; i < n; i++) {
+        for ( int j = 0; j < n; j++) {
+            printf("%d\t", b[i][j]);
+        }
+        printf("\n");
+    }
+    
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            // Swap row and column indices
+               c[i][j] =  a[i][j] * b[i][j];
+        }
+    }
+    printf("addition of 2 2d matrix is\n");
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j < n; j++) 
+        {
+            printf("%d\t", c[i][j]);
+        }
+        printf("\n");
+    }
+}
