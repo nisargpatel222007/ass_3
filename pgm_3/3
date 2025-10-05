@@ -1,0 +1,64 @@
+//   Accept 5 values and sort the array in ascending/descending order.
+ Find out different techniques for sorting and identify the best one.
+
+//  bubble sorting and selection sorting are basic and best for begineers and in compare to both of them i found bubble sorting best and easy by my perspective
+
+
+#include <stdio.h>
+
+int main() 
+{
+    int arr[5];
+
+    printf("Enter 5 values: \n");
+    for (int i = 0; i < 5; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    // --- Print the original array ---
+    printf("\nOriginal array:\n");
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    // --- Bubble Sort in Ascending Order ---
+    for (int i = 0; i < 5 - 1; i++)
+    {
+        for (int j = 0; j < 5 - i - 1; j++)
+        {
+            // Swap if left is greater than right
+            if (arr[j] > arr[j + 1]) 
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    // --- Print the ascending sorted array ---
+    printf("\nSorted array in ascending order:\n");
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    // --- Bubble Sort in Descending Order ---
+    for (int i = 0; i < 5 - 1; i++)
+    {
+        for (int j = 0; j < 5 - i - 1; j++)
+        {
+            // The ONLY change is here: use '<' instead of '>'
+            if (arr[j] < arr[j + 1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    // --- Print the descending sorted array ---
+    printf("\nSorted array in descending order:\n");
+    for (int i = 0; i < 5; i++) 
+    {
+        printf("%d ", arr[i]);
+    }
+}
