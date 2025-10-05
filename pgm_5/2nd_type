@@ -1,0 +1,75 @@
+//  Add two 2D arrays of same size and store the result in the 3rd one
+
+// simplly withoout n asked fromm the user 
+
+#include <stdio.h>
+
+int main() 
+{
+    int arr_A[3][3];
+    int arr_B[3][3];
+    int stored_arr[3][3];
+    int i, j; // Declare loop variables
+
+    // --- Reading input for the FIRST array ---
+    printf("Enter 9 values for the first array (A):\n");
+    for (i = 0; i < 3; i++) 
+    {
+        for (j = 0; j < 3; j++) 
+        {
+            // Read into the correct cell using loop variables i and j
+            scanf("%d", &arr_A[i][j]); 
+        }
+    }
+    
+    for (i = 0; i < 3; i++) 
+    {
+        for (j = 0; j < 3; j++) 
+        {
+            // Read into the correct cell using loop variables i and j
+            printf("%d\t",arr_A[i][j]); 
+        }
+        printf("\n");
+    }
+
+    // --- Reading input for the SECOND array ---
+    printf("Enter 9 values for the second array (B):\n");
+    for (i = 0; i < 3; i++) 
+    {
+        for (j = 0; j < 3; j++) 
+        {
+            // Read into the correct cell using loop variables i and j
+            scanf("%d",&arr_B[i][j]);
+        }
+    }
+    
+    for (i = 0; i < 3; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            // Read into the correct cell using loop variables i and j
+            printf("%d\t", arr_B[i][j]); 
+        }
+        printf("\n");
+    }
+
+    // --- Addition Logic ---
+    for (i = 0; i < 3; i++) {
+        // Iterate over each column in the current row
+        for (j = 0; j < 3; j++) {
+            // Store the result in the correct cell stored_arr[i][j]
+            stored_arr[i][j] = arr_A[i][j] + arr_B[i][j];
+        }
+    }
+
+    // --- Print the Resulting Array ---
+    printf("\nResultant array after addition:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            // Print the element from the correct cell
+            printf("%d\t", stored_arr[i][j]);
+        }
+        // Move to the next line after printing each row
+        printf("\n");
+    }
+}
