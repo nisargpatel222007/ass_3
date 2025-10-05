@@ -1,0 +1,53 @@
+// adding two string 
+
+
+
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[100], result[200];
+    int i = 0, j = 0;
+
+    printf("Enter first string: ");
+    fgets(str1, sizeof(str1), stdin);
+
+    printf("Enter second string: ");
+    fgets(str2, sizeof(str2), stdin);
+
+    // Remove newline from str1 if present
+    while (str1[i] != '\0') {
+        if (str1[i] == '\n') {
+            str1[i] = '\0';
+            break;
+        }
+        i++;
+    }
+
+    // Reset index and copy str1 to result
+    i = 0;
+    while (str1[i] != '\0') {
+        result[j++] = str1[i++];
+    }
+
+    // Remove newline from str2 if present
+    i = 0;
+    while (str2[i] != '\0') {
+        if (str2[i] == '\n') {
+            str2[i] = '\0';
+            break;
+        }
+        i++;
+    }
+
+    // Copy str2 to result
+    i = 0;
+    while (str2[i] != '\0') {
+        result[j++] = str2[i++];
+    }
+
+    result[j] = '\0';  // Null-terminate the result
+
+    printf("Concatenated string: %s\n", result);
+
+    return 0;
+}
